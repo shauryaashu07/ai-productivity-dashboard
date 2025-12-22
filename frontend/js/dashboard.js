@@ -26,15 +26,22 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
  * PAGE NAVIGATION
  ****************************/
 function showPage(pageId, element) {
-    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+    document.querySelectorAll(".page").forEach(page => {
+        page.style.display = "none";
+    });
+
     document.getElementById(pageId).style.display = "block";
 
-    document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("active"));
+    document.querySelectorAll(".nav-item").forEach(item => {
+        item.classList.remove("active");
+    });
+
     element.classList.add("active");
 
     if (pageId === "tasksPage") loadTasks();
     if (pageId === "notesPage") loadNotes();
 }
+
 
 /****************************
  * TASKS
@@ -52,19 +59,29 @@ async function loadTasks() {
     }
 
     tasks.forEach(task => {
-        taskList.innerHTML += `
-            <li class="task-card">
-                <strong>${task.title}</strong>
-                <p>${task.description || ""}</p>
-                <small>Deadline: ${task.deadline || "None"}</small><br>
-                <small>Priority: ${task.priority}</small><br>
-                <small>Status: ${task.status}</small><br>
+    taskList.innerHTML += `
+        <div class="task-card">
+            <div class="task-header">
+                <h4>${task.title}</h4>
+                <span class="priority ${task.priority.toLowerCase()}">
+                    ${task.priority}
+                </span>
+            </div>
 
-                <button onclick="completeTask(${task.id})">Complete</button>
-                <button onclick="deleteTask(${task.id})">Delete</button>
-            </li>
-        `;
-    });
+            <p class="task-desc">${task.description || "No description"}</p>
+
+            <div class="task-footer">
+                <small>📅 ${task.deadline || "No deadline"}</small>
+
+                <div class="task-actions">
+                    <button class="complete-btn" onclick="completeTask(${task.id})">✓</button>
+                    <button class="delete-btn" onclick="deleteTask(${task.id})">✕</button>
+                </div>
+            </div>
+        </div>
+    `;
+});
+
 }
 
 async function addTask() {
