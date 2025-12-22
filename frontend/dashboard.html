@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Productivity App</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>🔥 Productivity</h2>
+
+        <ul>
+            <li class="nav-item active" onclick="showPage('dashboardPage', this)">Dashboard</li>
+            <li class="nav-item" onclick="showPage('tasksPage', this)">Tasks</li>
+            <li class="nav-item" onclick="showPage('notesPage', this)">Notes</li>
+            <li class="nav-item">Calendar</li>
+            <li class="nav-item">Pomodoro</li>
+            <li class="nav-item">Analytics</li>
+        </ul>
+
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+        <div class="topbar">
+            <h2>Welcome, <span id="username"></span> 👋</h2>
+        </div>
+
+        <div class="content">
+
+            <!-- DASHBOARD PAGE -->
+            <section id="dashboardPage" class="page">
+                <h3>Today’s Overview</h3>
+                <div class="cards">
+                    <div class="card">
+                        Tasks Pending: <span id="taskCount">0</span>
+                    </div>
+                    <div class="card">
+                        Notes Saved: <span id="noteCount">0</span>
+                    </div>
+                    <div class="card">
+                        Pomodoro Sessions: <span id="pomodoroCount">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TASKS PAGE -->
+            <section id="tasksPage" class="page" style="display:none;">
+                <h3>Your Tasks</h3>
+
+                <div class="task-form">
+                    <input id="taskTitle" placeholder="Task title">
+                    <input id="taskDesc" placeholder="Description">
+                    <input id="taskDeadline" type="date">
+                    <select id="taskPriority">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <button onclick="addTask()">Add Task</button>
+                </div>
+
+                <ul id="taskList"></ul>
+            </section>
+
+            <!-- NOTES PAGE -->
+            <section id="notesPage" class="page" style="display:none;">
+                <h3>Your Notes</h3>
+
+                <div class="note-form">
+                    <input id="noteTitle" placeholder="Title">
+                    <textarea id="noteContent" placeholder="Write your note..."></textarea>
+
+                    <div class="note-actions">
+                        <select id="noteColor">
+                            <option value="#1f2937">Dark</option>
+                            <option value="#7c5cff">Purple</option>
+                            <option value="#10b981">Green</option>
+                            <option value="#3b82f6">Blue</option>
+                            <option value="#ef4444">Red</option>
+                        </select>
+                        <button onclick="addNote()">Add Note</button>
+                    </div>
+                </div>
+
+                <div id="notesGrid" class="notes-grid"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="./js/dashboard.js"></script>
+</body>
+</html>

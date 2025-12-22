@@ -1,0 +1,93 @@
+/* Minimal Professional Dark Auth UI */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --text: #e6eef8;
+  --muted: #93a0b5;
+  --accent: #7c5cff;
+  --border: rgba(255,255,255,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui;
+}
+
+html, body {
+  height: 100%;
+  background: radial-gradient(circle at 20% 20%, rgba(124,92,255,0.22), rgba(0,0,0,0) 38%),
+              linear-gradient(#0d1117, #0d1117);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  width: 360px;
+  padding: 32px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.auth-title {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  font-size: 14px;
+  background: #0f1319;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  color: var(--text);
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: rgba(124,92,255,0.6);
+  box-shadow: 0 0 0 3px rgba(124,92,255,0.18);
+}
+
+.btn-primary {
+  width: 100%;
+  margin-top: 6px;
+  background: var(--accent);
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.25s;
+}
+
+.btn-primary:hover {
+  background: #6d50ff;
+  transform: translateY(-2px);
+}
+
+.auth-footer {
+  margin-top: 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.auth-footer a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}

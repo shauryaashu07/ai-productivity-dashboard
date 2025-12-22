@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"path": "../../C++ DSA"
+		},
+		{
+			"path": "../../Classroom"
+		},
+		{
+			"path": "../../JAVA"
+		},
+		{
+			"path": "../../Project"
+		},
+		{
+			"path": "../../Web Development"
+		},
+		{
+			"path": "../../JavaScript"
+		},
+		{
+			"path": "../../Birthday"
+		},
+		{
+			"path": "C:/Users/hp/OneDrive/Pictures"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Web Development"
+	}
+}
