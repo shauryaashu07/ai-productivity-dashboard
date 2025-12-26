@@ -1,10 +1,15 @@
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
+
 function App() {
   return (
-    <div style={{ minHeight: "100vh", background: "#020617", color: "white" }}>
-      <h1 style={{ padding: "20px" }}>
-        React Day 8 – Setup Complete 🚀
-      </h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
   );
 }
 
